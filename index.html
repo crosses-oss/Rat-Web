@@ -3,81 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rat Web - Motore di ricerca</title>
+<title>Rat Web - Homepage</title>
 <style>
-body { font-family: 'Arial', sans-serif; background-color: #0a0a0a; color: #e0e0e0; text-align: center; padding: 40px; }
-h1 { color: #00ff00; font-size: 2em; margin-bottom: 20px; }
-button { background-color: #00ff00; color: #000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; font-size: 1em; margin: 10px; }
-button:hover { background-color: #00cc00; }
-.brand { background-color: #1a1a1a; margin: 15px auto; padding: 15px; max-width: 400px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 255, 0, 0.3); }
-.brand img { width: 100px; margin-bottom: 10px; }
-.brand h2 { margin: 10px 0; font-size: 1.4em; color: #ffffff; }
-.brand p { font-size: 0.95em; color: #cccccc; }
-.btnYellow { background-color: #ffcc00; color: #000; margin-top: 10px; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-weight: bold; }
-.btnYellow:hover { background-color: #e6b800; }
-.price-range { margin-top: 10px; color: #00ff00; font-size: 0.95em; display: none; }
-#imperialSection { display: none; }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+header {
+    background-color: #b30000;
+    color: white;
+    padding: 20px;
+}
+header h1 {
+    margin: 10px 0;
+    font-size: 2em;
+}
+button {
+    background-color: #b30000;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto;
+}
+button:hover {
+    background-color: #800000;
+}
+#imperialSection {
+    display: none;
+    padding: 20px;
+}
+.cover {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.brand {
+    background-color: #ffe6e6;
+    border-radius: 8px;
+    margin: 15px auto;
+    padding: 15px;
+    max-width: 400px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+.brand img {
+    width: 80px;
+    margin: 10px auto;
+}
+.brand h2 {
+    margin: 10px 0;
+    color: #b30000;
+}
+.brand p {
+    font-size: 0.95em;
+    color: #555;
+}
+.btnYellow {
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    padding: 8px 12px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.btnYellow:hover {
+    background-color: #e6b800;
+}
+.price-range {
+    margin-top: 8px;
+    color: #b30000;
+    font-weight: bold;
+    display: none;
+}
 </style>
 <script>
 function showImperial() {
-  document.getElementById('imperialSection').style.display = 'block';
-  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    document.getElementById('imperialSection').style.display = 'block';
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
 }
-
 function togglePriceRange(id) {
-  var elem = document.getElementById(id);
-  elem.style.display = elem.style.display === 'none' ? 'block' : 'none';
+    var elem = document.getElementById(id);
+    elem.style.display = elem.style.display === 'none' ? 'block' : 'none';
 }
 </script>
 </head>
 <body>
-<h1>Rat Web</h1>
-<p>Il motore di ricerca di Rat City</p>
-<button onclick="showImperial()">Imperial Motorsport</button>
+
+<header>
+    <h1>Rat Web</h1>
+    <p>Benvenuti nel Rat Web, l'internet di Rat City mantenuto su dalla vera ed unica Alt-Net! </p>
+</header>
+
+<button onclick="showImperial()">Vai a Imperial Motorsport</button>
 
 <div id="imperialSection">
-  <h1>Imperial Motorsport</h1>
-  <p>Il tuo rivenditore premium per auto sportive di lusso e velocità proibita.</p>
+    <h1>Imperial Motorsport</h1>
+    <img src="https://chat.openai.com/share/fc8d96f0-d177-42db-b663-e63c8e83c126" alt="Imperial Motorsport Copertina" class="cover">
+    <p>Il tuo concessionario premium di lusso e velocità per le strade di Rat City.</p>
 
-  <div class="brand">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg" alt="Mercedes Logo">
-    <h2>Mercedes</h2>
-    <p>Classe e potenza per dominare le strade di Rat City.</p>
-    <button class="btnYellow" onclick="togglePriceRange('price-mercedes')">Visualizza fascia prezzo</button>
-    <div class="price-range" id="price-mercedes">Dai 90.000R$ ai 200.000R$</div>
-  </div>
+    <div class="brand">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/90/Mercedes-Logo.svg" alt="Mercedes Logo">
+        <h2>Mercedes</h2>
+        <p>Classe e potenza per dominare le strade di Rat City.</p>
+        <button class="btnYellow" onclick="togglePriceRange('price-mercedes')">Visualizza fascia prezzo</button>
+        <div class="price-range" id="price-mercedes">Dai 90.000R$ ai 200.000R$</div>
+    </div>
 
-  <div class="brand">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW Logo">
-    <h2>BMW</h2>
-    <p>Guidare con precisione, accelerare con stile.</p>
-    <button class="btnYellow" onclick="togglePriceRange('price-bmw')">Visualizza fascia prezzo</button>
-    <div class="price-range" id="price-bmw">Dai 80.000R$ ai 190.000R$</div>
-  </div>
+    <div class="brand">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW Logo">
+        <h2>BMW</h2>
+        <p>Guidare con precisione, accelerare con stile.</p>
+        <button class="btnYellow" onclick="togglePriceRange('price-bmw')">Visualizza fascia prezzo</button>
+        <div class="price-range" id="price-bmw">Dai 80.000R$ ai 190.000R$</div>
+    </div>
 
-  <div class="brand">
-    <img src="https://upload.wikimedia.org/wikipedia/en/9/9d/Ferrari-Logo.svg" alt="Ferrari Logo">
-    <h2>Ferrari</h2>
-    <p>Il rosso della passione e della velocità pura.</p>
-    <button class="btnYellow" onclick="togglePriceRange('price-ferrari')">Visualizza fascia prezzo</button>
-    <div class="price-range" id="price-ferrari">Dai 120.000R$ ai 250.000R$</div>
-  </div>
+    <div class="brand">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Audi_logo_detail.svg" alt="Audi Logo">
+        <h2>Audi</h2>
+        <p>Performance e design futuristico per la tua fuga perfetta.</p>
+        <button class="btnYellow" onclick="togglePriceRange('price-audi')">Visualizza fascia prezzo</button>
+        <div class="price-range" id="price-audi">Dai 70.000R$ ai 180.000R$</div>
+    </div>
 
-  <div class="brand">
-    <img src="https://upload.wikimedia.org/wikipedia/en/d/d4/Maserati_logo.svg" alt="Maserati Logo">
-    <h2>Maserati</h2>
-    <p>Eleganza italiana con un ruggito che intimorisce.</p>
-    <button class="btnYellow" onclick="togglePriceRange('price-maserati')">Visualizza fascia prezzo</button>
-    <div class="price-range" id="price-maserati">Dai 100.000R$ ai 220.000R$</div>
-  </div>
+    <div class="brand">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Maserati_logo.svg" alt="Maserati Logo">
+        <h2>Maserati</h2>
+        <p>Eleganza italiana con un ruggito che intimorisce.</p>
+        <button class="btnYellow" onclick="togglePriceRange('price-maserati')">Visualizza fascia prezzo</button>
+        <div class="price-range" id="price-maserati">Dai 100.000R$ ai 220.000R$</div>
+    </div>
 
-  <div class="brand">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Audi_logo_detail.svg" alt="Audi Logo">
-    <h2>Audi</h2>
-    <p>Performance e design futuristico per la tua fuga perfetta.</p>
-    <button class="btnYellow" onclick="togglePriceRange('price-audi')">Visualizza fascia prezzo</button>
-    <div class="price-range" id="price-audi">Dai 70.000R$ ai 180.000R$</div>
-  </div>
+    <div class="brand">
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/9d/Ferrari-Logo.svg" alt="Ferrari Logo">
+        <h2>Ferrari</h2>
+        <p>Il rosso della passione e della velocità pura.</p>
+        <button class="btnYellow" onclick="togglePriceRange('price-ferrari')">Visualizza fascia prezzo</button>
+        <div class="price-range" id="price-ferrari">Dai 120.000R$ ai 250.000R$</div>
+    </div>
 </div>
 
 </body>
